@@ -1,22 +1,36 @@
-import React, { Component } from 'react';
-import './App.css';
-import dummyData from './components/dummy-data';
-import SearchBar from './components/SearchBar/SearchBar';
+import React, { Component } from "react";
+import "./App.css";
+import dummyData from "./components/dummy-data";
+import SearchBar from "./components/SearchBar/SearchBar";
+import PostContainer from "./components/PostContainer/PostContainer";
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       data: dummyData
-    }
+    };
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-        <SearchBar />
+          <SearchBar />
         </header>
+        <div className= 'posts'>
+          {this.state.data.map(post => (
+            <PostContainer
+              key={post.likes}
+              thumbNail={post.thumbnailUrl}
+              userName={post.username}
+              img={post.imageUrl}
+              likes={post.likes}
+              time={post.timestamp}
+              userComments={post.comments}
+            />
+          ))}
+        </div>
       </div>
     );
   }

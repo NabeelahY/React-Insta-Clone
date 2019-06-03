@@ -46,3 +46,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.App {
+	width: 70%;
+    margin: 0 auto;
+}
+
+.posts {
+	margin: 0 auto;
+	width: 60%
+}
