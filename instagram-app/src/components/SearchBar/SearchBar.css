@@ -5,6 +5,7 @@
     justify-content: space-evenly;
     height: 50px;
     border-bottom: 1px #999 solid;
+    font-size: 1.5rem;
 }
 
 .nav-bar a {
@@ -12,16 +13,21 @@
     margin: 0.5rem;
 }
 
-.react-icon {
+/* .react-icon {
     size: 3em;
-}
+} */
 .icons {
     display: flex;
+    font-size: 2rem;
+}
+.search-input {
+    width: 15rem;
 }
 
 .search-input input {
-    background-color: #ddd;
+    background-color: #ccc;
     border: none;
-    padding: 0.2rem 2rem;
+    height: 2rem;
+    width: 100%;
     text-align: center;
 }
