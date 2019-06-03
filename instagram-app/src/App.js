@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import uuid from 'uuid';
+import moment from 'moment';
 import "./App.css";
 import dummyData from "./components/dummy-data";
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -21,12 +23,12 @@ class App extends Component {
         <div className= 'posts'>
           {this.state.data.map(post => (
             <PostContainer
-              key={post.likes}
+              key={uuid()}
               thumbNail={post.thumbnailUrl}
               userName={post.username}
               img={post.imageUrl}
               likes={post.likes}
-              time={post.timestamp}
+              time={moment().format("MMM Do YYYY")}
               userComments={post.comments}
             />
           ))}

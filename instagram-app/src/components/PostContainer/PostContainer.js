@@ -1,7 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
+import uuid from 'uuid';
 import "./PostContainer.css";
 import Comments from "../CommentSection/CommentSection";
 import { FiHeart, FiMessageCircle } from "react-icons/fi";
+
 
 const PostContainer = ({
   thumbNail,
@@ -38,7 +41,7 @@ const PostContainer = ({
 
       <div>
         {userComments.map(comment => (
-          <div key = {comment.username}> 
+          <div key = {uuid()}> 
             <Comments commentor={comment.username} comment={comment.text} />
           </div>
         ))}
@@ -48,5 +51,16 @@ const PostContainer = ({
     </div>
   );
 };
+
+
+PostContainer.propTypes= {
+  thumbNail: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  likes: PropTypes.number.isRequired,
+  time: PropTypes.string.isRequired,
+  userComments: PropTypes.arrayOf(PropTypes.object).isRequired,
+
+}
 
 export default PostContainer;
