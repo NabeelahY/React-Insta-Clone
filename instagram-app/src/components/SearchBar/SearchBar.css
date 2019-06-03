@@ -1,0 +1,27 @@
+.nav-bar {
+    margin: 1rem 1rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    height: 50px;
+    border-bottom: 1px #999 solid;
+}
+
+.nav-bar a {
+    color: #111;
+    margin: 0.5rem;
+}
+
+.react-icon {
+    size: 3em;
+}
+.icons {
+    display: flex;
+}
+
+.search-input input {
+    background-color: #ddd;
+    border: none;
+    padding: 0.2rem 2rem;
+    text-align: center;
+}
