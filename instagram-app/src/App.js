@@ -28,7 +28,7 @@ class App extends Component {
               userName={post.username}
               img={post.imageUrl}
               likes={post.likes}
-              time={moment().format("MMM Do YYYY")}
+              time={moment(post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}
               userComments={post.comments}
             />
           ))}

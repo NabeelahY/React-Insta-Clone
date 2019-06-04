@@ -5,3 +5,16 @@
 .commenter {
     font-weight: bold;
 } 
+
+.add-comment {
+    width: 100%;
+    border-top: 1px #ccc solid;
+}
+
+.add-comment input {
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    padding: 1rem 0;
+    font-weight: bold;
+}

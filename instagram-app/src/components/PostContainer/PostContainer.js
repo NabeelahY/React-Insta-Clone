@@ -4,6 +4,7 @@ import uuid from 'uuid';
 import "./PostContainer.css";
 import Comments from "../CommentSection/CommentSection";
 import { FiHeart, FiMessageCircle } from "react-icons/fi";
+import AddComment from "../CommentSection/AddComment";
 
 
 const PostContainer = ({
@@ -45,9 +46,9 @@ const PostContainer = ({
             <Comments commentor={comment.username} comment={comment.text} />
           </div>
         ))}
+        <div className= 'timestamp'>{time}</div>
+        <AddComment />
       </div>
-
-      <div className= 'timestamp'>{time}</div>
     </div>
   );
 };
