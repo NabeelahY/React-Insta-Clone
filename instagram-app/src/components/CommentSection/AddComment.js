@@ -1,9 +1,14 @@
 import React from "react";
 
-const AddComment = ({ comment }) => {
+const AddComment = ({ comment, submitComment, containerId , changeHandler }) => {
   return (
-    <form className='add-comment'>
-      <input value={ comment } type="text" placeholder="Add a comment..." />
+    <form onSubmit={submitComment} id={containerId} className="add-comment">
+      <input
+        value={comment}
+        type="text"
+        placeholder="Add a comment..."
+        onChange = {(event) =>  changeHandler(event) }
+      />
     </form>
   );
 };
