@@ -11,7 +11,9 @@ class PostContainer extends Component {
     super(props);
     this.state = {
       comments: this.props.post.comments,
-      comment: ''
+      comment: '',
+      likes: this.props.post.likes,
+      like: false
     }
   }
 
@@ -23,17 +25,23 @@ class PostContainer extends Component {
 
   addComment = (e) => {
     e.preventDefault();
-    console.log(e.target.id)
     const newComment = {
       id: uuid(),
       username: 'user',
-      text: this.state.comment
+      text: this.state.commentPost
     }
       const commentList = this.state.comments.concat(newComment);
       this.setState({
         comments: commentList,
         comment: ''
       })
+  }
+
+  toggleLike = (props) => {
+    this.setState({
+      like: !this.state.like
+    })
+    return !this.state.like ? this.setState({likes: this.state.likes + 1}) : this.setState({likes: this.state.likes - 1})
   }
 
 render () {
@@ -54,11 +62,11 @@ render () {
         </div>
         <div className="like-icon">
           <div className="interact-icon">
-            <FiHeart />
+            <FiHeart onClick = {this.toggleLike} className= {this.state.like ? 'red' : ''} />
             <FiMessageCircle />
           </div>
 
-          <div className="likes">{this.props.likes} likes</div>
+          <div className="likes">{this.state.likes} likes</div>
         </div>
       </div>
 
